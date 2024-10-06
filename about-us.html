@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en"> 
+  <head>
+    <title>About Us</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/template/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,500,600,700,800,900,900i%7CRoboto:400%7CRubik:100,400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <style>
+
+      .custom-big{
+        margin-top: 20px;
+      }
+       /* 下拉框样式，使用类名 .custom-select */
+       .custom-select {
+            width: 250px; /* 设置下拉框宽度 */
+            height: 40px; /* 设置下拉框高度 */
+            border: 1px solid #A3BAC8; /* 边框颜色 */
+            border-radius: 3px; /* 圆角 */
+            padding: 5px; /* 内边距 */
+            font-size: 16px; /* 字体大小 */
+            background-color: white; /* 背景颜色 */
+            color: black; /* 文字颜色 */
+            appearance: none; /* 隐藏系统默认样式 */
+            -webkit-appearance: none; /* 隐藏系统默认样式（WebKit浏览器） */
+            -moz-appearance: none; /* 隐藏系统默认样式（Firefox） */
+            position: relative;
+        }
+
+        /* 添加下拉箭头 */
+        .custom-select::after {
+            content: '▼'; /* 自定义下拉箭头 */
+            font-size: 14px;
+            color: #333;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        /* 下拉框外部容器 */
+        .select-container {
+            display: inline-block; /* 让下拉框并排显示 */
+            margin: 10px;
+            position: relative; /* 确保::after伪元素能够定位 */
+        }
+    </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+        <p>Loading...</p>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel"> 
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand"><a href="index.html"><img class="brand-logo-light" src="images/template/01.png" alt="" width="173" height="52" srcset="images/template/01.png 2x"/></a></div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">首页</a>
+                      </li>
+                      <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="#">Pages</a> -->
+                        <!-- RD Navbar Megamenu-->
+                        <!-- <ul class="rd-menu rd-navbar-megamenu">
+                          <li class="rd-megamenu-item">
+                            <h6 class="rd-megamenu-title">Pages 1</h6>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="typography.html">Typography</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="buttons.html">Buttons</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="timers-&amp;-counters.html">Timers &amp; Counters</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="forms.html">Forms</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-megamenu-item">
+                            <h6 class="rd-megamenu-title">Pages 2</h6>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="grid-system.html">Grid system</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="icon-lists.html">Icon Lists</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="privacy-policy.html">Privacy policy</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="coming-soon.html">Coming Soon</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="search-results.html">Search results</a></li>
+                            </ul>
+                          </li>
+                          <li class="rd-megamenu-item">
+                            <h6 class="rd-megamenu-title">Pages 3</h6>
+                            <ul class="rd-megamenu-list">
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="blog-post.html">Blog Post</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news.html">News</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="news-2.html">News 2</a></li>
+                              <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="gallery.html">Gallery</a></li>
+                            </ul>
+                          </li>
+                        </ul> -->
+                      </li>
+                      
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="news.html">推荐</a>
+                        <!-- RD Navbar Dropdown
+                        <ul class="rd-menu rd-navbar-dropdown">
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single-cause-page.html">Single cause page</a></li>
+                        </ul> -->
+                      <!-- </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="team.html">Team</a>
+                        RD Navbar Dropdown-->
+                        <!-- <ul class="rd-menu rd-navbar-dropdown">
+                          <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="team-member-page.html">Team Member Page</a></li>
+                        </ul>
+                      </li> -->
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">检举</a>
+                      </li>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about-us.html">关于</a></li>
+                    </ul><a class="button button-primary button-sm" href="single-cause-page.html">开始游戏</a>
+                  </div>
+                </div><a class="button button-primary button-sm" href="single-cause-page.html">开始游戏</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="parallax-container" data-parallax-img="images/bg-breadcrumbs-about.jpg">
+        <div class="parallax-content breadcrumbs-custom context-dark">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-9">
+                <h2 class="breadcrumbs-custom-title">关于邪教组织</h2>
+                <ul class="breadcrumbs-custom-path">
+                  <li><a href="index.html">首页</a></li>
+                  <li class="active">当前页面</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-lg bg-gray-1 bg-gray-1-decor">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-6 pr-xl-5"><img src="images/about-us-1-518x430.jpg" alt="" width="518" height="430"/>
+            </div>
+            <div class="col-lg-6">
+              <h3>邪教百科</h3>
+              <div class="text-with-divider">
+                <div class="divider"></div>
+                <h4 class="text-opacity-70">崇尚科学 关爱家庭 珍惜生命 反对邪教</h4>
+              </div>
+              <p>“邪教”一词的出现，可以追溯到唐武德四年（621年）。是年六月二十一日，太史令傅奕向唐高祖李渊上了一份“废省佛僧表”，内称：“胡佛邪教，退还天竺。凡是沙门，放归桑梓……”这是迄今为止，我们见到的中国历史文献中有关“邪教”一词的最早记录。</p>
+              <p>邪教的“精神领袖”至高无上，是一切信徒所必须永远服从的。这个“精神领袖”往往在世，也是邪教的创立者。他要么假借其他宗教的躯壳，要么自创一个教派。如“科学神教”借助基督教，控制着信徒的所有行动，而他自己则可以不受教规的限制。他能够解释一切现象。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-lg bg-default">
+        <div class="container">
+          <h3 class="text-center">目前已知邪教</h3>
+          <div class="row row-85">
+            <div class="col-md-6 col-lg-4">
+              <div class="box-icon-modern">
+                <div class="box-icon-inner decorate-triangle"><span class="icon-xl linearicons-earth icon-primary"></span></div>
+                <div class="box-icon-caption">
+                  <h4><a href="#">法轮功</a></h4>
+                  <p>法轮功的创立人李洪志自称“宇宙主佛”，具有极大的危害性。法轮功极端敌视共产党和社会主义制度，被中国及多个国家认定为邪教。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="box-icon-modern">
+                <div class="box-icon-inner decorate-circle"><span class="icon-xl linearicons-umbrella2 icon-primary"></span></div>
+                <div class="box-icon-caption">
+                  <h4><a href="#">全能神</a></h4>
+                  <p>全能神教是由“呼喊派”骨干赵维山于1989年创立的，系脱离基督教新教地方教会运动的变种组织，是当前国内最具危害力的邪教组织之一。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="box-icon-modern">
+                <div class="box-icon-inner decorate-rectangle"><span class="icon-xl linearicons-baby2 icon-primary"></span></div>
+                <div class="box-icon-caption">
+                  <h4><a href="#">门徒会</a></h4>
+                  <p>组织情况：陕西耀县农民季三保于1989年初创立，内部设有总会、小分会、教会点等7级机构。到1995年初，该组织活动已涉及14个省的300多个县，受蒙骗群众35万余人。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="box-icon-modern">
+                <div class="box-icon-inner decorate-rectangle"><span class="icon-xl linearicons-sun icon-primary"></span></div>
+                <div class="box-icon-caption">
+                  <h4><a href="#">全范围教会</a></h4>
+                  <p>组织情况：1984年，河南镇平县人徐永泽在平顶山创立“全范围教会”。最高机构为“全范围议会”，下设7个牧区。至1991年时，该组织活动已涉及15个省、自治区的88个县，蒙骗群众数万人。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="box-icon-modern">
+                <div class="box-icon-inner decorate-triangle"><span class="icon-xl linearicons-leaf icon-primary icon-xl-min"></span></div>
+                <div class="box-icon-caption">
+                  <h4><a href="#">灵灵教</a></h4>
+                  <p>组织情况：江苏淮阴县农民华雪和于1983年创立。该组织形式较为疏松，但有明确分工。至1990年时，该组织活动已涉及13个省、自治区、直辖市，蒙骗群众1.5万余人。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="box-icon-modern">
+                <div class="box-icon-inner decorate-circle"><span class="icon-xl linearicons-share2 icon-primary"></span></div>
+                <div class="box-icon-caption">
+                  <h4><a href="#">观音法门</a></h4>
+                  <p>组织情况：1988年，英籍华人释清海在台湾创立“观音法门”，活动涉及全国大部分省、自治区、直辖市。1998年5月，骨干许成江另立“圆顿法门”，蔓延到9个省市的20余个县(市)，受蒙骗群众约5000人。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-lg bg-gray-1">
+        <div class="container">
+          <h3 class="text-center">邪教头目</h3>
+          <div class="row no-gutters">
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic">
+                <div class="team-classic-figure"><img src="images/team-classic-1-390x252.jpg" alt="" width="390" height="252"/>
+                  <ul class="team-classic-soc-list">
+                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="team-member-page.html">李洪志</a></h4>
+                  <p>法沦功邪教组织头目</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic">
+                <div class="team-classic-figure"><img src="images/team-classic-2-390x252.jpg" alt="" width="390" height="252"/>
+                  <ul class="team-classic-soc-list">
+                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="team-member-page.html">赵维山</a></h4>
+                  <p>全能神邪教组织头目</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic">
+                <div class="team-classic-figure"><img src="images/team-classic-3-390x252.jpg" alt="" width="390" height="252"/>
+                  <ul class="team-classic-soc-list">
+                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="team-member-page.html">季三保</a></h4>
+                  <p>门徒会邪教组织头目</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic">
+                <div class="team-classic-figure"><img src="images/team-classic-4-390x252.jpg" alt="" width="390" height="252"/>
+                  <ul class="team-classic-soc-list">
+                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="team-member-page.html">释清海</a></h4>
+                  <p>观音法门邪教组织头目</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic">
+                <div class="team-classic-figure"><img src="images/team-classic-5-390x252.jpg" alt="" width="390" height="252"/>
+                  <ul class="team-classic-soc-list">
+                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="team-member-page.html">徐文库</a></h4>
+                  <p>三班仆人派邪教组织头目</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="team-classic">
+                <div class="team-classic-figure"><img src="images/team-classic-6-390x252.jpg" alt="" width="390" height="252"/>
+                  <ul class="team-classic-soc-list">
+                    <li><a class="icon icon-md fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-md fa-instagram" href="#"></a></li>
+                    <li><a class="icon icon-md fa-twitter" href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="team-classic-caption">
+                  <h4><a class="team-name" href="team-member-page.html">温金路</a></h4>
+                  <p>日月气功邪教组织头目</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-xl bg-gray-700">
+        <div class="container">
+          <div class="row row-50" style="margin: 0 auto;width: 100%;display: flex;flex-wrap: wrap;margin: 10px 10%;">
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">25</div>
+                </div>
+                <p class="counter-classic-title">我国目前认定邪教数量</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">3</div><span class="small">k+</span>
+                </div>
+                <p class="counter-classic-title">我国目前已打击的数量</p>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">1700</div><span class="small">+</span>
+                </div>
+                <p class="counter-classic-title">据不完全统计，在1992-2002年间因“法轮功”邪教受到伤害的人数</p>
+              </article>
+            </div>
+            <!-- <div class="col-sm-6 col-lg-3">
+              <article class="counter-classic">
+                <div class="counter-classic-main">
+                  <div class="counter">4</div>
+                </div>
+                <p class="counter-classic-title">Offices</p>
+              </article>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- <section class="section">
+        <div class="row row-30" data-isotope-group="gallery">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-1-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-1-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-2-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-2-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-3-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-3-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-4-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-4-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-5-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-5-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-6-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-6-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-7-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-7-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <div class="wow slideInDown">
+              <div class="gallery-item-classic"><img src="images/gallery-8-465x383.jpg" alt="" width="465" height="383"/>
+                <div class="gallery-item-classic-caption"><a href="images/gallery-8-original.jpg" data-lightgallery="item">zoom</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <section class="section-lg text-center">
+        <div class="container">
+          <div class="wow-outer">
+            <div class="wow slideInDown">
+              <h3>反邪教网</h3>
+            </div>
+          </div>
+          <!-- Owl Carousel-->
+          <!-- <div class="owl-carousel owl-dots-primary dots-offset-lg owl-carousel-lg" data-items="1" data-sm-items="2" data-dots-each="2" data-lg-items="4" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false"><a class="box-sponsor box-sponsor-modern wow-outer" href="#"> -->
+            <div class="custom-big">
+            <div class="select-container">
+              <select class="custom-select">
+                  <option>国家机关网站</option>
+                    
+              </select>
+          </div>
+      
+          <div class="select-container">
+              <select class="custom-select">
+                  <option>重点新闻网</option>
+              </select>
+          </div>
+      
+          <div class="select-container">
+            <select class="custom-select"  id="anti-cult-sites" onchange="handleSelectChange(event)">
+              <option>反邪教网站</option>
+              <option value="https://www.gdsfxj.com/">广东省反邪教网</option>
+              <option  value="https://www.guangxifxj.cn/">广西反邪教网</option>
+              <option  value="https://www.gdsfxj.com/">反全能神联盟</option>
+              <option  value="https://www.gdsfxj.com/">反全能神联合会</option>
+              <option  value="https://www.gdsfxj.com/">全能神邪教揭秘</option>
+              <option  value="https://www.gdsfxj.com/">上海市青浦区反邪教网</option>
+              <option  value="https://www.gdsfxj.com/">邪教受害者之家</option>
+          </select>
+          </div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </section>
+      <!-- Page Footer-->
+      <footer class="section footer-minimal context-dark">
+        <div class="container wow-outer">
+          <div class="wow fadeIn">
+            <div class="row row-50 row-lg-60">
+              <div class="col-12"><a href="index.html"><img src="images/template/01.png" alt="" width="250" srcset="images/template/01.png 2x" style="margin-right: 20px;"/></a></div>
+              <div class="col-12">
+                <ul class="footer-minimal-nav">
+                  <li><a href="index.html">首页</a></li>
+                  <li><a href="news.html">推荐</a></li>
+                  <li><a href="contacts.html">检举</a></li>
+                  <li><a href="about-us.html">关于</a></li>
+                  <!-- <li><a href="contacts.html">Contacts</a></li> -->
+                </ul>
+              </div>
+              <!-- <div class="col-12">
+                <ul class="social-list">
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-facebook" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-instagram" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-youtube-play" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-pinterest-p" href="#"></a></li>
+                </ul>
+              </div> -->
+            </div>
+            <p class="rights"><span>©2024 </span><a href="https://www.gdsfxj.com/fxdt/content/post_165827.html">“同心反邪，共守平安” 比赛 </a><a target="_blank" href="https://www.gdsfxj.com/fxdt/content/post_165827.html" title="网站模板">All rights reserved.</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/click.js"></script>
+  </body>
+</html>

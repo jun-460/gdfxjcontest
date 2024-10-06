@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻列表</title>
+    <style>
+        .news-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .news-card:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>新闻列表</h1>
+
+    <div class="news-card" data-url="news-detail.html?news_id=1">
+        <h2>新闻标题1</h2>
+        <p>这是新闻1的简要描述。</p>
+    </div>
+
+    <div class="news-card" data-url="news-detail.html?news_id=2">
+        <h2>新闻标题2</h2>
+        <p>这是新闻2的简要描述。</p>
+    </div>
+
+    <div class="news-card" data-url="news-detail.html?news_id=3">
+        <h2>新闻标题3</h2>
+        <p>这是新闻3的简要描述。</p>
+    </div>
+
+    <script>
+        // 获取所有新闻卡片
+        const newsCards = document.querySelectorAll('.news-card');
+
+        // 为每个卡片添加点击事件
+        newsCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // 获取卡片上的data-url属性，跳转到对应的新闻详情页
+                const url = this.getAttribute('data-url');
+                let path = window.location.protocol +  '//' + url
+                window.location.href = url;
+            });
+        });
+    </script>
+
+</body>
+</html>

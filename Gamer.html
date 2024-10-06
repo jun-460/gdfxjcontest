@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反对邪教小游戏 - 简洁博客风格</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+            overflow: hidden;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            max-width: 800px;
+            animation: slideIn 1s ease;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1976d2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+            animation: popIn 0.5s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: #0d47a1;
+            transform: scale(1.05);
+        }
+        .feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2e7d32;
+            transition: opacity 0.5s ease;
+        }
+        #score {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #endContainer {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border: none; /* 去掉圆角边框 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 5px; /* 轻微的边角处理 */
+            transition: transform 0.3s ease;
+        }
+        video:hover {
+            transform: scale(1.02);
+        }
+        /* 动画 */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* 加载视频和问题时的动画 */
+        #videoContainer, #questionContainer {
+            display: none;
+            margin: 20px 0;
+            animation: slideIn 1s ease-out;
+        }
+        #questionContainer {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="content">
+        <div class="card">
+            <h1>反对邪教小游戏</h1>
+            <button id="startButton">开始游戏</button>
+            <div id="score">得分: <span id="scoreValue">0</span></div>
+        </div>
+
+        <div id="videoContainer" class="card">
+            <video id="video" controls>
+                <source src="" id="videoSource" type="video/mp4">
+                您的浏览器不支持视频标签。
+            </video>
+        </div>
+
+        <div id="questionContainer" class="card">
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <div class="feedback" id="feedback" style="opacity: 0;"></div>
+            <button id="nextButton" style="display: none;">下一题</button>
+        </div>
+
+        <div id="endContainer" class="card">
+            <h2>游戏结束！</h2>
+            <p>您的最终得分是: <span id="finalScore"></span></p>
+            <button id="restartButton">再来一次</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        {
+            type: 'single',
+            src: 'media/20240925hn.mp4',
+            question: '你认为视频中提到的行为是合理的吗？',
+            options: ['是', '否'],
+            correct: '否',
+            feedback: ['正确，这种行为是不合理的！', '错误，这种行为可能导致严重后果。']
+        },
+        {
+            type: 'single',
+            src: 'media/20240925hn.mp4',
+            question: '视频中提到的行为是健康的吗？',
+            options: ['是', '否'],
+            correct: '否',
+            feedback: ['正确，这是不健康的行为！', '错误，这可能会对人产生不良影响。']
+        }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    document.getElementById('startButton').addEventListener('click', startGame);
+    document.getElementById('restartButton').addEventListener('click', restartGame);
+    document.getElementById('nextButton').addEventListener('click', nextQuestion);
+
+    function startGame() {
+        document.getElementById('startButton').style.display = 'none';
+        document.getElementById('score').style.display = 'block';
+        showVideo();
+    }
+
+    function showVideo() {
+        const videoContainer = document.getElementById('videoContainer');
+        const video = document.getElementById('video');
+        const source = document.getElementById('videoSource');
+
+        source.src = questions[currentQuestion].src;
+        video.load();
+        videoContainer.style.display = 'block';
+        video.play();
+
+        video.onended = () => {
+            videoContainer.style.display = 'none';
+            showQuestion();
+        };
+    }
+
+    function showQuestion() {
+        const questionContainer = document.getElementById('questionContainer');
+        const question = document.getElementById('question');
+        const options = document.getElementById('options');
+        const feedback = document.getElementById('feedback');
+        feedback.style.display = 'none'; // 隐藏反馈
+        feedback.style.opacity = 0; // 重置反馈透明度
+
+        question.innerText = questions[currentQuestion].question;
+        options.innerHTML = '';
+
+        questions[currentQuestion].options.forEach(option => {
+            const button = document.createElement('button');
+            button.innerText = option;
+            button.onclick = () => checkAnswer(option);
+            options.appendChild(button);
+        });
+
+        questionContainer.style.display = 'block';
+        setTimeout(() => {
+            questionContainer.style.opacity = 1; // 逐渐显示问题容器
+        }, 10);
+
+        document.getElementById('nextButton').style.display = 'none'; // 隐藏下一题按钮
+    }
+
+    function checkAnswer(selected) {
+        const feedback = document.getElementById('feedback');
+        const correctAnswers = questions[currentQuestion].correct;
+
+        const optionButtons = document.querySelectorAll('#options button');
+        optionButtons.forEach(button => button.classList.add('disabled'));
+
+        if (selected === correctAnswers) {
+            feedback.innerText = questions[currentQuestion].feedback[0];
+            score += 10;
+        } else {
+            feedback.innerText = questions[currentQuestion].feedback[1];
+            score -= 5;
+        }
+
+        feedback.style.display = 'block';
+        feedback.style.opacity = 1; // 显示反馈
+        document.getElementById('scoreValue').innerText = score;
+
+        if (currentQuestion === questions.length - 1) {
+            endGame();
+        } else {
+            document.getElementById('nextButton').style.display = 'inline-block';
+        }
+    }
+
+    function nextQuestion() {
+        if (currentQuestion < questions.length - 1) {
+            currentQuestion++;
+            hideQuestion();
+            showVideo();
+        }
+    }
+
+    function hideQuestion() {
+        const questionContainer = document.getElementById('questionContainer');
+        questionContainer.style.opacity = 0;
+        setTimeout(() => {
+            questionContainer.style.display = 'none';
+        }, 500);
+    }
+
+    function endGame() {
+        document.getElementById('finalScore').innerText = score;
+        document.getElementById('endContainer').style.display = 'block';
+    }
+
+    function restartGame() {
+        currentQuestion = 0;
+        score = 0;
+        document.getElementById('scoreValue').innerText = score;
+        document.getElementById('endContainer').style.display = 'none';
+        document.getElementById('startButton').style.display = 'block';
+    }
+</script>
+</body>
+</html>
