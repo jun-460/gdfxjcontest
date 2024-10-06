@@ -1,0 +1,13 @@
+ #image-container {
+              position: absolute;
+              display: none;
+              opacity: 0;
+              transform: translateY(30px); /* 初始状态下向下偏移 */
+              transition: opacity 0.3s ease, transform 0.3s ease; /* 同时控制透明度和浮动效果 */
+              z-index: 999;
+          }
+          #image {
+              max-width: 50px;
+              max-height: 50px;
+              z-index: 999;
+          }
